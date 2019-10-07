@@ -1,0 +1,35 @@
+stages:
+  - unittest
+  - imagebuilder
+  # - deploy
+
+Run Unittest:
+  stage: unittest
+  image: node:10
+  only:
+    - develop
+  script:
+    - npm install
+    - npm run test
+
+Build Docker Image:
+  stage: imagebuilder
+  image: docker:latest
+  services:
+    - docker:dind
+  only:
+    - develop
+  script:
+    - echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin git.itopplus.com:5000
+    - docker build -t git.itopplus.com:5000/darkside/scrubengine:$CI_COMMIT_SHA .
+    - docker push git.itopplus.com:5000/darkside/scrubengine:$CI_COMMIT_SHA
+
+# Deployment:
+#   stage: deploy
+#   image: alpine
+#   only:
+#     - develop
+#   script:
+#     - sh ./yaml/kubectl.sh
+#     - sed 's/_VERSION_/'"$CI_COMMIT_SHA"'/g;' ./yaml/kubernetes.tpl.yml > kubernetes.yml;
+#     - kubectl apply -f kubernetes.yml --namespace=scrubengine
