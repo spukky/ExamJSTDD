@@ -4,6 +4,15 @@ My Email: worawut@itopplus.com
 
 Exam 1 Implement the roman number algorithm with javascript
 (with TDD approach)
+```
+  const a = roman('IV');
+  console.log('  Number : '+ a)
+  ------
+  Output
+  ------
+    Number : 4
+  ------
+```
 
 Exam 2 Callback explain by code 
 each number should represent to callback used setTimeout with random timeout for assuming the execution process. 
