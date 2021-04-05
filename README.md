@@ -3,7 +3,7 @@ My Email: worawut@itopplus.com
 # ExamJSTDD
 
 Exam 1 Implement the roman number algorithm with javascript
-(with TDD approach)
+(Optional : You can follow TDD approach )
 ```
   const a = roman('IV');
   console.log('  Number : '+ a)
