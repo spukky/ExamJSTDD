@@ -1,7 +1,7 @@
-function FizzBuzz(value) {
-    return 'Fizz';
+function roman(value) {
+    return '4';
 }
 
 module.exports = {
-    FizzBuzz: FizzBuzz,
+    roman: roman,
 };
