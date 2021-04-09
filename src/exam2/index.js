@@ -12,7 +12,7 @@ async function async(arg, callback) {
     await callback(arg);
 }
 
-async function test() {
+async function SeriesCallback() {
     for (i = 0; i < a.length; i++) {
         await async(a[i], (result) => {
             if (result % 3 == 0) {
@@ -24,4 +24,4 @@ async function test() {
     }
 }
 
-test();
+SeriesCallback();
