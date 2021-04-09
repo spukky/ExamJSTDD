@@ -19,11 +19,8 @@ function roman(value) {
             result += cur;
         }
     }
-    
-    return result ;
-    
+    return result ;   
 }
-// console.log(roman("III"));
 module.exports = {
     roman: roman,
 };
