@@ -15,9 +15,6 @@ async function async(arg, callback) {
 async function SeriesCallback() {
     for (i = 0; i < a.length; i++) {
         await async(a[i], (result) => {
-            if (result % 3 == 0) {
-
-            }
             console.log(result);
         })
 
