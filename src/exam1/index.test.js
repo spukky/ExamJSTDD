@@ -1,3 +1,7 @@
 const { roman } = require("./index");
-
-console.log(roman("IIV"));
+const numberRoman = roman("IVV")
+console.log("------");
+console.log("Output");
+console.log("------");
+console.log("Number : " + numberRoman );
+console.log("------");
